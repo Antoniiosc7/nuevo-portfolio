@@ -1,0 +1,54 @@
+angular:
+  label: Angular
+  permalink: /angular
+  description: Contenido relacionado con Angular y su ecosistema.
+
+spring:
+  label: Spring Boot
+  permalink: /spring
+  description: Guías y proyectos desarrollados con Spring Boot.
+
+devops:
+  label: DevOps
+  permalink: /devops
+  description: Automatización, pipelines y prácticas de entrega continua.
+
+certificaciones:
+  label: Certificaciones
+  permalink: /certificaciones
+  description: Recursos y plataformas para preparar certificaciones.
+
+python:
+  label: Python
+  permalink: /python
+  description: Proyectos y utilidades desarrolladas con Python.
+
+computer-vision:
+  label: Computer Vision
+  permalink: /computer-vision
+  description: Reconocimiento de imágenes y técnicas de visión por computador.
+
+ocr:
+  label: OCR
+  permalink: /ocr
+  description: Extracción de texto desde imágenes.
+
+tfg:
+  label: TFG
+  permalink: /tfg
+  description: Trabajos fin de grado y proyectos académicos.
+
+haskell:
+  label: Haskell
+  permalink: /haskell
+  description: Desarrollo de aplicaciones con Haskell.
+
+functional-programming:
+  label: Programación funcional
+  permalink: /functional-programming
+  description: Patrones y proyectos basados en programación funcional.
+
+game-dev:
+  label: Game Dev
+  permalink: /game-dev
+  description: Desarrollo de videojuegos y experiencias interactivas.

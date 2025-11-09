@@ -1,0 +1,10 @@
+antonio:
+  name: Antonio Saborido
+  title: Ingeniero de Software y Desarrollador Full Stack
+  url: https://www.linkedin.com/in/antoniosaborido/
+  image_url: /img/blog/autor.jpg
+  page: true
+  socials:
+    linkedin: antoniosaborido
+    github: Antoniiosc7
+    email: antoniosaboridocampos@gmail.com
