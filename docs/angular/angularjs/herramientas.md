@@ -64,6 +64,78 @@ Aunque AngularJS nació cuando Grunt y Bower eran estándar, hoy podemos usar he
 - Usa **`npm ci`** para instalaciones reproducibles y fija las versiones mediante `package-lock.json`.
 - Genera artefactos minificados (`app.min.js`, `templates.min.js`) y súbelos a un *artifact storage* o CDN.
 
+## Internacionalización y localización
+
+AngularJS no trae i18n completo de serie, pero existen librerías consolidadas:
+
+- **angular-translate** (`pascalprecht.translate`): soporta catálogos JSON/PO, interpolación y cargas asincrónicas.
+- **tmhDynamicLocale**: cambia `locale` de AngularJS en tiempo real (formateo de fecha/moneda).
+- **angular-gettext**: genera catálogos `.po` y expone filtros `gettext` en las vistas.
+
+### Patrón de archivos
+
+```
+src/
+├── i18n/
+│   ├── es/
+│   │   └── common.json
+│   ├── en/
+│   │   └── common.json
+│   └── extractor.config.js
+├── app.module.js
+└── shared/
+    └── translate/
+        ├── translate.config.js
+        └── translate-loader.service.js
+```
+
+### Configuración con `angular-translate`
+
+```js
+angular
+  .module('app.core')
+  .config(($translateProvider) => {
+    $translateProvider.useSanitizeValueStrategy('escapeParameters');
+    $translateProvider.useLoader('$translatePartialLoader', {
+      urlTemplate: '/i18n/{lang}/{part}.json',
+    });
+    $translateProvider.preferredLanguage('es');
+  })
+  .run(($translate, $rootScope) => {
+    $rootScope.$on('locale:change', (_, lang) => $translate.use(lang));
+  });
+```
+
+En cada módulo de feature:
+
+```js
+angular.module('app.users').config(($translatePartialLoaderProvider) => {
+  $translatePartialLoaderProvider.addPart('users');
+});
+```
+
+### Carga de catálogos dinámica
+
+Utiliza Webpack o Gulp para generar bundles por idioma:
+
+```js
+const gulp = require('gulp');
+const angularTranslate = require('gulp-angular-translate');
+
+gulp.task('i18n', function () {
+  return gulp
+    .src('src/**/*.html')
+    .pipe(angularTranslate({defaultLang: 'es', lang: ['es', 'en'], safeMode: true}))
+    .pipe(gulp.dest('dist/i18n/'));
+});
+```
+
+### Testing con múltiples idiomas
+
+- Define `LANG` como variable de entorno en el pipeline (`npm run test -- --lang=en`).
+- Mockea `$translateProvider` en tests unitarios para evitar llamadas HTTP.
+- Añade pruebas e2e que validen traducciones críticas (`expect(element(by.id('title')).getText()).toEqual('Informe');`).
+
 ## Seguridad
 
 - Habilita **Strict Contextual Escaping (SCE)** (`$sce`) para evitar inyecciones de HTML no seguras.

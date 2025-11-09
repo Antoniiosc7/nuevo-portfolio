@@ -45,8 +45,4 @@ Después, ejecuta `mainFile.py` o el script `arranque.bat`.
 
 Para probar nuevas camisetas, solo hay que copiar las imágenes a los directorios `facil`, `intermedio` o `dificil`. El sistema las detectará automáticamente en la siguiente ejecución.
 
----
-
-- **Fecha**: 4 de diciembre de 2024  
-- **Visitas originales**: 20
 

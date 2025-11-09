@@ -219,13 +219,13 @@ const techHighlights = [
 ];
 
 const heroHighlights = [
-  {icon: '🚀', text: '3+ años liderando soluciones Full Stack'},
+  {icon: '🚀', text: '3+ años como Ingeniero de Software'},
   {icon: '🛠️', text: 'Angular · Spring Boot · Oracle SQL'},
   {icon: '🏅', text: 'Certificaciones ITIL · Scrum · DevOps'},
 ];
 
 const contactChips = [
-  {icon: '📍', label: 'Sevilla, España'},
+  {icon: '📍', label: 'Jerez de la Frontera, España'},
   {
     icon: '🔗',
     label: 'linkedin.com/in/antonio-saborido',
@@ -311,7 +311,7 @@ export default function Home(): ReactNode {
                 <p className={styles.heroSignature}>Antonio Saborido</p>
                 <h2>Stack principal</h2>
                 <p className={styles.heroProfileText}>
-                  Angular, Spring Boot, bases de datos Oracle/PostgreSQL, pipelines CI/CD y observabilidad con
+                  Angular, Spring Boot, bases de datos Oracle SQL, pipelines CI/CD con Jenkins y observabilidad con
                   Grafana y Prometheus.
                 </p>
               </div>

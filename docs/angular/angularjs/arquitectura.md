@@ -44,6 +44,27 @@ El enlace bidireccional simplifica formularios, pero dificulta escalar cuando la
 4. **Prueba directivas**: escribe specs con `ngMock` para garantizar su comportamiento.
 5. **Prepara la migración**: adopta `component()` y TypeScript cuando sea posible para acercarte a Angular moderno.
 
+## Arquitectura para proyectos grandes
+
+- **Feature modules**: agrupa cada dominio funcional (`users`, `billing`, `reports`) en su propio módulo con entradas claras (`users.module.js`, `users.routes.js`, `users.component.js`).
+- **Core y shared**: `app.core` contiene servicios singleton (logger, interceptores, configuraciones), mientras que `app.shared` exporta directivas, filtros y componentes reutilizables.
+- **Archivo `index.js` por carpeta**: reexporta elementos y reduce rutas de importación cuando usas bundlers modernos (`export * from './users.service';`).
+- **Servicios anti-estado global**: usa `session.service.js`, `auth.service.js` o stores basados en `$rootScope.$broadcast()` para evitar dependencias circulares.
+- **Convenciones de nombres**:
+  - `*.module.js` define el módulo y sus dependencias.
+  - `*.component.js` registra componentes (`angular.module('app').component('userList', {...})`).
+  - `*.controller.js`, `*.service.js`, `*.directive.js` encapsulan cada pieza.
+  - `*.routes.js` contiene la configuración de `ui-router` o `ngRoute`.
+  - `*.spec.js` agrupa pruebas unitarias junto al código que testean.
+
+### Integración con entornos mixtos
+
+En organizaciones con múltiples aplicaciones AngularJS conviviendo con Angular moderno u otros stacks:
+
+- Expone cada app como **micro front-end** mediante `ng-app` manual y módulos root independientes.
+- Comparte librerías comunes (componentes, servicios HTTP) mediante paquetes npm internos o submódulos git.
+- Centraliza temas (CSS variables, utilidades SCSS) y tradúcelos en un build compartido para evitar divergencias de estilos.
+
 ## ¿Qué sigue?
 
 En los siguientes documentos profundizamos en cada pieza:

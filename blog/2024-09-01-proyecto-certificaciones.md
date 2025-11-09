@@ -50,8 +50,5 @@ La plataforma de certificaciones es una aplicación web desarrollada con **Angul
 - **Base de datos**: gestión integral de certificaciones, exámenes y documentación.
 - **DevOps**: pipelines automáticos para despliegue y verificación de calidad.
 
----
 
-- **Fecha**: 1 de septiembre de 2024  
-- **Visitas originales**: 53
 

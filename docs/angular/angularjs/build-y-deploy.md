@@ -100,6 +100,35 @@ angular.module('demoApp').constant('API_BASE', window.__CONFIG__.apiBase);
 <script src="/dist/main.abc123.js"></script>
 ```
 
+## Gestión de traducciones en el build
+
+- Mantén los catálogos en `src/i18n/<lang>/<part>.json`.
+- Usa plugins como `gulp-angular-translate`, `angular-translate-loader-static-files` o `webpack-angular-translate` para concatenar y minificar los diccionarios.
+- Genera bundles separados por idioma cuando el tamaño es crítico (`dist/es/app-es.[hash].js`, `dist/en/app-en.[hash].js`) y sirve el correspondiente desde tu CDN.
+- Valida traducciones con scripts automáticos (`yarn i18n:check`) que detectan claves huérfanas o faltantes comparando idiomas.
+
+### Ejemplo con Webpack y `ContextReplacementPlugin`
+
+```js
+const webpack = require('webpack');
+
+plugins: [
+  new webpack.ContextReplacementPlugin(/i18n[\\/]/, (context) => {
+    if (!/lang/.test(context.context)) {
+      context.regExp = /es|en|fr/;
+    }
+  }),
+];
+```
+
+### Arquitectura multilingüe en producción
+
+| Estrategia | Ventajas | Consideraciones |
+| --- | --- | --- |
+| **Cargar un único bundle + catálogos diferidos** | Menor coste de build y caching sencillo. | Requiere HTTP adicional al cambiar de idioma. |
+| **Bundles por idioma** | Elimina peticiones extra, mejora el primer render. | Necesitas lógica en CDN/servidor para servir el asset correcto. |
+| **Catálogos compartidos vía CDN** | Ideal cuando múltiples apps comparten traducciones. | Versiona y firma los catálogos para evitar “cache poisoning”. |
+
 ## Observabilidad
 
 - Habilita **$logProvider.debugEnabled(false)** en producción.

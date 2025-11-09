@@ -21,8 +21,4 @@ Cada pulsación de tecla genera un nuevo estado del tablero. Una función centra
 
 Si la serpiente choca contra un bloque prohibido queda encerrada en una "cárcel". Para reiniciar basta con recargar la página. Al conseguir 10 manzanas consecutivas la serpiente queda en una cárcel dorada que representa la victoria.
 
----
-
-- **Fecha**: 4 de diciembre de 2024  
-- **Visitas originales**: 21
 

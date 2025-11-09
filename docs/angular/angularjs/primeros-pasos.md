@@ -118,7 +118,20 @@ En `package.json`:
 - Organiza el código por dominios (`users/`, `orders/`) en lugar de tipos (`components/`, `services/`).
 - Habilita **Strict Dependency Injection** (`ng-strict-di`) para detectar problemas en minificación.
 
-## 5. Recursos de plantillas
+## 5. Convenciones de archivos `.js`
+
+| Patrón | Descripción | Ejemplo |
+| --- | --- | --- |
+| `app.module.js` | Módulo raíz con dependencias. | `angular.module('demoApp', ['demoApp.core', 'demoApp.users']);` |
+| `app.config.js` | Configuración de rutas, interceptores, providers. | `angular.module('demoApp').config(routeConfig);` |
+| `feature/*.module.js` | Submódulos por dominio. | `angular.module('demoApp.users', []);` |
+| `feature/*.component.js` | Componentes con `bindings` y `templateUrl`. | `angular.module('demoApp.users').component('userList', {...});` |
+| `feature/*.service.js` | Lógica compartida o acceso a API. | `angular.module('demoApp.users').service('UserService', UserService);` |
+| `feature/*.translations.json` | Catálogos de idioma por feature. | `users.translations.json` |
+
+Agrupa cada conjunto (`module/config/run/component/service`) en la misma carpeta para facilitar refactors y migración futura.
+
+## 6. Recursos de plantillas
 
 - [angular/angular-seed](https://github.com/angular/angular-seed) – proyecto oficial minimal.
 - [John Papa HotTowel](https://github.com/johnpapa/hottowel-angular) – estructura escalable con Gulp.

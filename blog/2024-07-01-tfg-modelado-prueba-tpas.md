@@ -75,9 +75,3 @@ Incluí manuales completos para:
 - Tutorial completo del ciclo de creación de un TPA.
 
 Además, documenté los problemas detectados y propuse mejoras futuras, subrayando la relevancia de las metodologías ágiles y la aplicación práctica de los conocimientos adquiridos durante la carrera.
-
----
-
-- **Fecha**: 1 de julio de 2024  
-- **Visitas originales**: 128
-
