@@ -2,6 +2,7 @@
 title: Herramientas y soporte AngularJS
 sidebar_label: Herramientas
 sidebar: angularJsSidebar
+description: Tooling moderno, estrategias de soporte, internacionalización y QA continuo para aplicaciones AngularJS en producción.
 ---
 
 # Herramientas y soporte AngularJS

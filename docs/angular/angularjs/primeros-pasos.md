@@ -2,6 +2,7 @@
 title: Primeros pasos con AngularJS
 sidebar_label: Primeros pasos
 sidebar: angularJsSidebar
+description: Guía para inicializar un proyecto AngularJS desde cero, configurar scripts y adoptar buenas prácticas.
 ---
 
 # Crear tu primer proyecto AngularJS

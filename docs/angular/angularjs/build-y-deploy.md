@@ -2,6 +2,7 @@
 title: Build y despliegue en producción
 sidebar_label: Build y despliegue
 sidebar: angularJsSidebar
+description: Pipeline de build, optimización, variables de entorno, traducciones y despliegue continuo para AngularJS.
 ---
 
 # Build y despliegue en producción

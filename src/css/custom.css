@@ -27,8 +27,8 @@
   --ifm-footer-title-color: #e2e8f0;
   --ifm-footer-link-color: #cbd5f5;
   --ifm-footer-link-hover-color: #ffffff;
-  --ifm-background-color: #f8fafc;
-  --ifm-hero-background-color: #f8fafc;
+  --ifm-background-color: #ffffff;
+  --ifm-hero-background-color: #ffffff;
 }
 
 html {
@@ -257,17 +257,17 @@ body {
 
 .theme-doc-sidebar-menu .menu__link {
   font-weight: 500;
-  color: #1e293b;
+  color: #0f172a;
 }
 
 .theme-doc-sidebar-menu .menu__link:hover,
 .theme-doc-sidebar-menu .menu__link--active {
-  color: #1d4ed8;
+  color: #1849a6;
 }
 
 .theme-doc-sidebar-container {
-  background: rgba(248, 250, 252, 0.9);
-  border-right: 1px solid rgba(148, 163, 184, 0.18);
+  background: #ffffff;
+  border-right: 1px solid rgba(148, 163, 184, 0.14);
 }
 
 .theme-doc-sidebar-container .menu__list {
@@ -284,12 +284,12 @@ body {
 }
 
 .theme-doc-sidebar-container .menu__list-item:hover {
-  background: rgba(37, 99, 235, 0.08);
+  background: rgba(37, 99, 235, 0.06);
   transform: translateX(2px);
 }
 
 .theme-doc-sidebar-container .menu__link--active {
-  background: rgba(37, 99, 235, 0.12);
+  background: rgba(37, 99, 235, 0.08);
   border-radius: 10px;
 }
 
@@ -436,7 +436,7 @@ body::before {
   inset: -20% -10% auto;
   height: 60%;
   pointer-events: none;
-  background: radial-gradient(40% 35% at 50% 20%, rgba(37, 99, 235, 0.12), transparent 70%);
+  background: radial-gradient(40% 35% at 50% 20%, rgba(37, 99, 235, 0.07), transparent 70%);
   z-index: -1;
 }
 

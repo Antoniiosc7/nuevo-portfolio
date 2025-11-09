@@ -2,6 +2,7 @@
 title: Arquitectura de AngularJS
 sidebar_label: Arquitectura
 sidebar: angularJsSidebar
+description: Arquitectura MVC en AngularJS, scopes, digest cycle y patrones de organización para aplicaciones empresariales.
 ---
 
 # Arquitectura de AngularJS

@@ -2,6 +2,7 @@
 title: Introducción a AngularJS
 sidebar_label: Introducción
 sidebar: angularJsSidebar
+description: Panorama general, casos de uso actuales y filosofía clave de AngularJS 1.x.
 ---
 
 # AngularJS en contexto

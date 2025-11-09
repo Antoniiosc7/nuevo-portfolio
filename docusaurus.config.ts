@@ -2,12 +2,43 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const seoStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Antonio Saborido Campos',
+  jobTitle: 'Software Engineer · Full Stack',
+  url: 'https://antoniosaborido.es',
+  sameAs: [
+    'https://www.linkedin.com/in/antoniosaborido/',
+    'https://github.com/Antoniiosc7',
+  ],
+  knowsAbout: ['Angular', 'AngularJS', 'Spring Boot', 'Spring Security', 'Microservicios', 'Observabilidad'],
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Antonio Saborido · Portfolio',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Jerez de la Frontera',
+    addressCountry: 'ES',
+  },
+  email: 'mailto:antonio.saborido01@gmail.com',
+  telephone: '+34 693 41 52 57',
+};
+
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
   title: 'Antonio Saborido',
   tagline: 'Ingeniero de Software y Desarrollador Full Stack',
   favicon: 'img/favicon.ico',
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {type: 'application/ld+json'},
+      innerHTML: JSON.stringify(seoStructuredData),
+    },
+  ],
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -61,6 +92,19 @@ const config: Config = {
   ],
 
   themeConfig: {
+    metadata: [
+      {name: 'author', content: 'Antonio Saborido Campos'},
+      {
+        name: 'keywords',
+        content:
+          'Antonio Saborido, portfolio, Angular, AngularJS, Spring Boot, Spring Security, Microservicios, Documentación técnica',
+      },
+      {
+        name: 'description',
+        content:
+          'Portfolio y documentación técnica de Antonio Saborido Campos: experiencia, proyectos, guías de Angular, AngularJS, Spring y microservicios.',
+      },
+    ],
     // Replace with your project's social card
     image: 'img/antonio-social-card.svg',
     colorMode: {
