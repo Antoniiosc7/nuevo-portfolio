@@ -121,7 +121,7 @@ const config: Config = {
         {to: '/blog', label: 'Blog', position: 'left'},
         {to: '/documentacion', label: 'Documentación', position: 'left', activeBaseRegex: 'docs|documentacion'},
         {
-          href: 'https://antoniosaborido.es/cvs/resumeES.pdf',
+          href: 'https://antoniosaborido.es/cv/resumeES.pdf',
           label: 'CV',
           position: 'right',
         },
