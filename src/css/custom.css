@@ -1,3 +1,10 @@
+.navbar-sidebar__items {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5rem 1.5rem 2rem;
+}
+
 .navbar-sidebar__items .menu__list-item {
   margin: 0;
   padding: 0;
@@ -127,6 +134,7 @@ body {
 .navbar-sidebar__items {
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 0.5rem 1.5rem 2rem;
 }
 
@@ -475,4 +483,14 @@ body::before {
   .navbar {
     padding: 0.9rem 0;
   }
+
+  .navbar-sidebar__items .menu__link {
+    padding: 0.5rem 0.75rem;
+    margin: 0;
+  }
+}
+
+/* Reduce width of mobile sidebar to avoid horizontal scroll */
+.navbar-sidebar {
+  max-width: 480px;
 }

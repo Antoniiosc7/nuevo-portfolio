@@ -730,7 +730,11 @@
   }
 
   .heroInner {
-    padding: 2.5rem 1.8rem;
+    padding: 2.5rem 1.8rem 2.5rem 0.5rem;
+  }
+
+  .heroContent {
+    padding-right: 0.5rem;
   }
 
   .heroActions,

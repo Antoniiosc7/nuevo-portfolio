@@ -264,7 +264,7 @@ export default function Home(): ReactNode {
               <div className={styles.heroActions}>
                 <a
                   className={clsx('button button--lg', styles.primaryCta)}
-                  href="https://antoniosaborido.es/cvs/resumeES.pdf"
+                  href="https://antoniosaborido.es/cv/resumeES.pdf"
                   target="_blank"
                   rel="noreferrer">
                   Descargar CV

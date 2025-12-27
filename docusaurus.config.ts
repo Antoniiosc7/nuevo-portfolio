@@ -123,17 +123,17 @@ const config: Config = {
         {
           href: 'https://antoniosaborido.es/cv/resumeES.pdf',
           label: 'CV',
-          position: 'right',
+          position: 'left',
         },
         {
           href: 'https://www.linkedin.com/in/antoniosaborido/',
           label: 'LinkedIn',
-          position: 'right',
+          position: 'left',
         },
         {
           href: 'https://github.com/Antoniiosc7',
           label: 'GitHub',
-          position: 'right',
+          position: 'left',
         },
       ],
     },

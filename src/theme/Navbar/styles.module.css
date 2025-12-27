@@ -67,6 +67,7 @@
 
 @media (max-width: 768px) {
   .docsSubheaderInner {
+    flex-direction: column;
     padding: 0.65rem clamp(1rem, 6vw, 1.5rem);
     gap: 0.6rem;
   }
@@ -76,31 +77,28 @@
   }
 
   .docsChip {
+    width: 100%;
+    justify-content: flex-start;
     font-size: 0.82rem;
     padding: 0.35rem 0.85rem;
+    border-radius: 8px;
   }
 }
 
 @media (max-width: 520px) {
   .docsSubheaderInner {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    gap: 0.5rem;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(191, 219, 254, 0.5) transparent;
+    flex-direction: column;
+    padding: 0.5rem 0;
   }
 
-  .docsSubheaderInner::-webkit-scrollbar {
-    height: 6px;
+  .docsChip {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
   }
 
-  .docsSubheaderInner::-webkit-scrollbar-thumb {
-    background: rgba(191, 219, 254, 0.4);
-    border-radius: 999px;
-  }
-
-  .docsSubheaderInner::-webkit-scrollbar-track {
-    background: transparent;
+  .docsChip + .docsChip {
+    margin-top: 0.5rem;
   }
 }
-
